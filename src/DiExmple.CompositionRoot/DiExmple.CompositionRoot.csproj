@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RuntimeIdentifier>win81-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DiExmple.Services.Impl\DiExmple.Services.Impl.csproj" />
+    <ProjectReference Include="..\DiExmple.Services\DiExmple.Services.csproj" />
+  </ItemGroup>
+
+</Project>
