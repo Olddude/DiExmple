@@ -5,9 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DiExmple.Domain\DiExmple.Domain.csproj" />
     <ProjectReference Include="..\DiExmple.Persistance.Interfaces\DiExmple.Persistance.Interfaces.csproj" />
-    <ProjectReference Include="..\DiExmple.Services.Interfaces\DiExmple.Services.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

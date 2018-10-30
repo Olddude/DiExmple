@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DiExmple.Services.Impl\DiExmple.Services.Impl.csproj" />
+    <ProjectReference Include="..\..\src\DiExmple.Domain\DiExmple.Domain.csproj" />
+    <ProjectReference Include="..\..\src\DiExmple.Persistance.Interfaces\DiExmple.Persistance.Interfaces.csproj" />
+    <ProjectReference Include="..\..\src\DiExmple.Services\DiExmple.Services.csproj" />
   </ItemGroup>
 
 </Project>

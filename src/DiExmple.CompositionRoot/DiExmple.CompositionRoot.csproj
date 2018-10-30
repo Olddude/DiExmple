@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,7 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiExmple.Services.Impl\DiExmple.Services.Impl.csproj" />
+    <ProjectReference Include="..\DiExmple.Domain\DiExmple.Domain.csproj" />
+    <ProjectReference Include="..\DiExmple.Persistance.Interfaces\DiExmple.Persistance.Interfaces.csproj" />
+    <ProjectReference Include="..\DiExmple.Persistance\DiExmple.Persistance.csproj" />
+    <ProjectReference Include="..\DiExmple.Services.Interfaces\DiExmple.Services.Interfaces.csproj" />
     <ProjectReference Include="..\DiExmple.Services\DiExmple.Services.csproj" />
   </ItemGroup>
 

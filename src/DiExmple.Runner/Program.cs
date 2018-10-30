@@ -1,10 +1,11 @@
 ﻿using Autofac;
 using DiExmple.CompositionRoot;
-using DiExmple.Services;
+using DiExmple.Domain;
+using DiExmple.Services.Interfaces;
 
 namespace DiExmple.Runner
 {
-    class Program
+	class Program
     {
         static void Main(string[] args)
         {
@@ -14,9 +15,9 @@ namespace DiExmple.Runner
 
             using (var scope = container.BeginLifetimeScope())
             {
-                var reader = scope.Resolve<IMessageReader>();
-                reader.Read();
-            }
+				var todosReader = scope.Resolve<IProvider<Todo<string>>>();
+				var values = todosReader.GetValues().Result;
+			}
         }
     }
 }
