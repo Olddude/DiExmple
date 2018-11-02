@@ -16,6 +16,12 @@ namespace DiExmple.CompositionRoot
 
 			builder.RegisterType<TodoProvider<string>>()
 				   .As<IProvider<Todo<string>>>();
+
+			builder.RegisterType<MockTodoReader<double?>>()
+				   .As<IReader<Todo<double?>>>();
+
+			builder.RegisterType<TodoProvider<double?>>()
+				   .As<IProvider<Todo<double?>>>();
 		}
     }
 }

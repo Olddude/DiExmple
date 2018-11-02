@@ -11,7 +11,7 @@ namespace DiExmple.Persistance
 	{
 		public Task<IEnumerable<Todo<T>>> Read()
 		{
-			var result = nj.JsonConvert.DeserializeObject<IEnumerable<Todo<T>>>(File.ReadAllText(@".\assets\test_todos.json"));
+			var result = nj.JsonConvert.DeserializeObject<IEnumerable<Todo<T>>>(File.ReadAllText(@".\assets\todos.json"));
 			return Task.FromResult(result);
 		}
 	}
