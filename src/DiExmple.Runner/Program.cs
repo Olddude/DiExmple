@@ -2,7 +2,9 @@
 using Autofac.Extensions.DependencyInjection;
 using DiExmple.CompositionRoot;
 using DiExmple.Domain;
+using DiExmple.Persistance;
 using DiExmple.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -26,6 +28,13 @@ namespace DiExmple.Runner
 						.ReadFrom.Configuration(configuration)
 						.CreateLogger()
 				);
+			});
+
+			var todosConnectionString = configuration.GetConnectionString("TodosConnectionString");
+
+			services.AddDbContext<MsSqlTodoDataContext>(options =>
+			{
+				options.UseSqlServer(todosConnectionString);
 			});
 
 			services.AddTransient(typeof(ILogger<>), typeof(Logger<>));
@@ -52,7 +61,7 @@ namespace DiExmple.Runner
 
 			var rootLogger = serviceProvider.GetService<ILogger<Program>>();
 
-			var service = serviceProvider.GetService<IProvider<Todo<string>>>();
+			var service = serviceProvider.GetService<IProvider<Todo[]>>();
 
 			var values = service.GetValues().Result;
 

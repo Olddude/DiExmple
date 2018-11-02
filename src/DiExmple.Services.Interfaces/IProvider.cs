@@ -5,6 +5,6 @@ namespace DiExmple.Services.Interfaces
 {
 	public interface IProvider<T>
     {
-        Task<IEnumerable<T>> GetValues();
+        Task<T> GetValues();
     }
 }

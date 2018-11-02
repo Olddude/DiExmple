@@ -11,17 +11,11 @@ namespace DiExmple.CompositionRoot
     {
         public static void Register(this ContainerBuilder builder)
         {
-			builder.RegisterType<MockTodoReader<string>>()
-				   .As<IReader<Todo<string>>>();
+			builder.RegisterType<MsSqlTodoReader>()
+				   .As<IReader<Todo[]>>();
 
-			builder.RegisterType<TodoProvider<string>>()
-				   .As<IProvider<Todo<string>>>();
-
-			builder.RegisterType<MockTodoReader<double?>>()
-				   .As<IReader<Todo<double?>>>();
-
-			builder.RegisterType<TodoProvider<double?>>()
-				   .As<IProvider<Todo<double?>>>();
+			builder.RegisterType<TodoProvider>()
+				   .As<IProvider<Todo[]>>();
 		}
     }
 }

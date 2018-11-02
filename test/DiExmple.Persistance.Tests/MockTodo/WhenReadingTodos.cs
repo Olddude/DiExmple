@@ -10,7 +10,7 @@ namespace DiExmple.Persistance.Tests
 		[Fact]
 		public async Task ThenValuesAreReturned()
 		{
-			var sut = new MockTodoReader<string>();
+			var sut = new MockTodoReader();
 
 			var result = await sut.Read();
 
